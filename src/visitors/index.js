@@ -22,12 +22,8 @@ import Icon from 'material-ui/svg-icons/social/person';
 
 import EditButton from '../buttons/EditButton';
 import NbItemsField from '../commands/NbItemsField';
-import ProductReferenceField from '../products/ProductReferenceField';
 import StarRatingField from '../reviews/StarRatingField';
 import FullNameField from './FullNameField';
-import SegmentsField from './SegmentsField';
-import SegmentInput from './SegmentInput';
-import SegmentsInput from './SegmentsInput';
 
 export const VisitorIcon = Icon;
 
@@ -37,7 +33,6 @@ const VisitorFilter = (props) => (
         <DateInput source="last_seen_gte" />
         <NullableBooleanInput source="has_ordered" />
         <NullableBooleanInput source="has_newsletter" defaultValue={true} />
-        <SegmentInput />
     </Filter>
 );
 
@@ -57,7 +52,6 @@ export const VisitorList = (props) => (
             <ColoredNumberField source="total_spent" options={{ style: 'currency', currency: 'USD' }} />
             <DateField source="latest_purchase" showTime />
             <BooleanField source="has_newsletter" label="News." />
-            <SegmentsField />
             <EditButton />
         </Datagrid>
     </List>
@@ -95,7 +89,6 @@ export const VisitorEdit = (props) => (
                 <ReferenceManyField addLabel={false} reference="reviews" target="customer_id">
                     <Datagrid filter={{ status: 'approved' }}>
                         <DateField source="date" />
-                        <ProductReferenceField />
                         <StarRatingField />
                         <TextField source="comment" style={{ maxWidth: '20em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} />
                         <EditButton style={{ padding: 0 }} />
@@ -103,7 +96,6 @@ export const VisitorEdit = (props) => (
                 </ReferenceManyField>
             </FormTab>
             <FormTab label="resources.customers.tabs.stats">
-                <SegmentsInput />
                 <NullableBooleanInput source="has_newsletter" />
                 <DateField source="first_seen" style={{ width: 128, display: 'inline-block' }} />
                 <DateField source="latest_purchase" style={{ width: 128, display: 'inline-block' }} />
