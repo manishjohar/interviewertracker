@@ -19,7 +19,7 @@ import {
     TextField,
     TextInput,
 } from 'admin-on-rest';
-import Icon from 'material-ui/svg-icons/editor/attach-money';
+import Icon from 'material-ui/svg-icons/action/perm-contact-calendar';
 
 import Basket from './Basket';
 import NbItemsField from './NbItemsField';

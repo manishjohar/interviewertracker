@@ -16,7 +16,7 @@ import {
     TextField,
     TextInput,
 } from 'admin-on-rest';
-import Icon from 'material-ui/svg-icons/communication/comment';
+import Icon from 'material-ui/svg-icons/action/supervisor-account';
 
 import CustomerReferenceField from '../visitors/CustomerReferenceField';
 import StarRatingField from './StarRatingField';
@@ -47,7 +47,7 @@ export const ReviewList = (props) => (
         <Datagrid rowStyle={rowStyle}>
             <DateField source="date" />
             <CustomerReferenceField />
-    
+
             <StarRatingField />
             <TextField source="comment" style={{ maxWidth: '18em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} />
             <TextField source="status" />

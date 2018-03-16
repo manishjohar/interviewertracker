@@ -10,9 +10,11 @@ import { CommandIcon } from './commands';
 import { ReviewIcon } from './reviews';
 
 const items = [
-    { name: 'customers', icon: <VisitorIcon /> },
+    { name: 'reviews', icon: <ReviewIcon  /> },
     { name: 'commands', icon: <CommandIcon /> },
-    { name: 'reviews', icon: <ReviewIcon /> },
+    { name: 'customers', icon: <VisitorIcon /> },
+
+
 ];
 
 const styles = {

@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import { Admin, Delete, Resource } from 'admin-on-rest';
 
 import './App.css';
-
 import authClient from './authClient';
-import sagas from './sagas';
 import themeReducer from './themeReducer';
 import Login from './Login';
 import Layout from './Layout';
@@ -16,7 +14,6 @@ import translations from './i18n';
 
 import { VisitorList, VisitorEdit, VisitorDelete, VisitorIcon } from './visitors';
 import { CommandList, CommandEdit, CommandIcon } from './commands';
-
 import { ReviewList, ReviewEdit, ReviewIcon } from './reviews';
 
 import restClient from './restClient';
@@ -37,7 +34,6 @@ class App extends Component {
                 title="Interviewer Tracker"
                 restClient={restClient}
                 customReducers={{ theme: themeReducer }}
-                customSagas={sagas}
                 customRoutes={customRoutes}
                 authClient={authClient}
                 dashboard={Dashboard}
@@ -46,9 +42,10 @@ class App extends Component {
                 menu={Menu}
                 messages={translations}
             >
-                <Resource name="customers" list={VisitorList} edit={VisitorEdit} remove={VisitorDelete} icon={VisitorIcon} />
+                <Resource name="reviews" list={ReviewList} edit={ReviewEdit} icon={ReviewIcon} />
                 <Resource name="commands" list={CommandList} edit={CommandEdit} remove={Delete} icon={CommandIcon} options={{ label: 'Schedule Interview' }}/>
-                    <Resource name="reviews" list={ReviewList} edit={ReviewEdit} icon={ReviewIcon} />
+                <Resource name="customers" list={VisitorList} edit={VisitorEdit} remove={VisitorDelete} icon={VisitorIcon} />
+
             </Admin>
         );
     }
